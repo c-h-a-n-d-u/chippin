@@ -39,7 +39,7 @@ export default function FriendsSummary({className=""}: FriendsSummaryProps) {
     },
   ];
     return (
-        <div className={`mt-2 rounded-xl bg-white p-4 shadow-sm ${className}`}>
+        <div className={`rounded-xl bg-white px-4 shadow-sm ${className}`}>
             <h2 className="text-2xl text-gray-800 mb-4 tracking-wide">Friends</h2>
             <div className="space-y-1 ">
                 {friends.map( (friend) => {
@@ -50,9 +50,9 @@ export default function FriendsSummary({className=""}: FriendsSummaryProps) {
                                 <img src={friend.avatarUrl} alt={friend.name} className="rounded-full w-10 h-10"/>
                             </div>
                             <div>
-                                <p>{friend.name}</p>
+                                <p className="font-medium text-gray-900">{friend.name}</p>
                                 <p>
-                                    <span>{friend.status}</span>
+                                    <span className="text-xs sm:text-sm text-gray-500">{friend.status}</span>
                                     <span> </span>
                                     <span>{friend.currencyCode}</span>
                                     <span>{friend.amount}</span>

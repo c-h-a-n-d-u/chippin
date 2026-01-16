@@ -28,9 +28,17 @@ export default function DashboardPage
             {/* Balance Summary */}
             <TotalBalanceSummary />
 
-            <div className="grid grid-cols-[1fr_300px] gap-4">
-              <PendingSplitsSummary />
-              <FriendsSummary />
+            <div className="grid grid-cols-[1fr_300px] gap-4 items-start mt-6">
+              {/* Left Section */}
+              <div className="space-y-2 self-start">
+                <PendingSplitsSummary />
+              </div>
+              {/* Right Section */}
+              <div className="space-y-6 self-start">
+                <FriendsSummary />
+                <FriendsSummary />
+              </div>
+              
             </div>
             
 

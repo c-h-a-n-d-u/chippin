@@ -44,7 +44,7 @@ export default function PendingSplitsSummary({className=""}: PendingSplitsSummar
         },
       ];
     return (
-        <div className={`mt-6 ${className}`}>
+        <div className={`${className}`}>
               <h2 className="text-2xl text-gray-800 mb-4 tracking-wide">Pending Splits</h2>
               {/* Pending Splits List */}
               <div className="bg-white rounded-xl shadow-sm p-2 sm:p-4">
