@@ -1,7 +1,11 @@
 import PendingSplitsRow  from "./PendingsplitsRow"
 import type { PendingSplit } from "../../types/pendingSplit";
 
-export default function PendingSplitsSummary() {
+type PendingSplitsSummaryProps = {
+  className?: string;
+};
+
+export default function PendingSplitsSummary({className=""}: PendingSplitsSummaryProps) {
     const pendingSplits: PendingSplit[] = [
         {
           id: 1,
@@ -17,9 +21,30 @@ export default function PendingSplitsSummary() {
           amount: "₹3,400.00",
           status: "You Get",
         },
+        {
+          id: 3,
+          name: "Pizza Night",
+          date: "Jan 16",
+          amount: "₹150.00",
+          status: "You Pay",
+        },
+        {
+          id: 4,
+          name: "Waffles and Burger",
+          date: "Jan 16",
+          amount: "₹100.00",
+          status: "You Get",
+        },
+        {
+          id: 5,
+          name: "Tteokbokki",
+          date: "Jan 5",
+          amount: "₹750.00",
+          status: "You Get",
+        },
       ];
     return (
-        <div className="mt-6">
+        <div className={`mt-6 ${className}`}>
               <h2 className="text-2xl text-gray-800 mb-4 tracking-wide">Pending Splits</h2>
               {/* Pending Splits List */}
               <div className="bg-white rounded-xl shadow-sm p-2 sm:p-4">

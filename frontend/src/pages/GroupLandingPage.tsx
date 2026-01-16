@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ExpenseDetails } from "./ExpenseDetails";
 import { fetchGroupDetails } from "../services/fetchGroupDetails";
 import { GroupDataType } from "../types/group";
-import Card from "../components/ui/Card";
 
 type GroupProps = {
   groupId: number;

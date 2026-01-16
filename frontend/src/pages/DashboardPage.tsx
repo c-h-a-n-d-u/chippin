@@ -6,6 +6,7 @@ import { useState } from "react";
 import Card from "../components/ui/Card";
 import TotalBalanceSummary from "../components/ui/TotalBalanceSummary";
 import PendingSplitsSummary from "../components/ui/PendingSplitsSummary";
+import FriendsSummary from "../components/ui/FriendsSummary";
 
 export default function DashboardPage
 () {
@@ -27,9 +28,11 @@ export default function DashboardPage
             {/* Balance Summary */}
             <TotalBalanceSummary />
 
-
-            {/* Pending Splits Section */}
-            <PendingSplitsSummary />
+            <div className="grid grid-cols-[1fr_300px] gap-4">
+              <PendingSplitsSummary />
+              <FriendsSummary />
+            </div>
+            
 
           </Card>
         </main>
