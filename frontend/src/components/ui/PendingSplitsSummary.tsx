@@ -47,9 +47,9 @@ export default function PendingSplitsSummary({className=""}: PendingSplitsSummar
         <div className={`${className}`}>
               <h2 className="text-2xl text-gray-800 mb-4 tracking-wide">Pending Splits</h2>
               {/* Pending Splits List */}
-              <div className="bg-white rounded-xl shadow-sm p-2 sm:p-4">
+              <div className="bg-white rounded-xl shadow-sm sm:px-4">
                 {/* Header */}
-                <div className="hidden sm:flex items-center text-sm text-gray-500 font-medium pb-3 border-b">
+                <div className="hidden px-1 sm:flex items-center text-sm text-gray-500 font-medium pb-3 border-b">
                   <div className="flex-1">Name</div>
                   <div className="hidden sm:block sm:w-32">Date</div>
                   <div className="w-32 text-right">Total</div>

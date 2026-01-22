@@ -7,6 +7,7 @@ import Card from "../components/ui/Card";
 import TotalBalanceSummary from "../components/ui/TotalBalanceSummary";
 import PendingSplitsSummary from "../components/ui/PendingSplitsSummary";
 import FriendsSummary from "../components/ui/FriendsSummary";
+import Activity from "../components/ui/Activity";
 
 export default function DashboardPage
 () {
@@ -32,6 +33,7 @@ export default function DashboardPage
               {/* Left Section */}
               <div className="space-y-2 self-start">
                 <PendingSplitsSummary />
+                <Activity />
               </div>
               {/* Right Section */}
               <div className="space-y-6 self-start">

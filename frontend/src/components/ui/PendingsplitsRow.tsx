@@ -10,7 +10,7 @@ export default function PendingsplitsRow({name,date,amount,status}: Pendingsplit
     const statusColor = isPay ? "bg-red-200 text-gray-700" : "bg-green-200 text-gray-700";
 
     return (
-        <div className="py-3 text-gray-800">
+        <div className="py-3 px-1 text-gray-800">
             {/* Mobile Layout */}
             <div className="sm:hidden flex items-start justify-between gap-4">
                 {/* left side */}
