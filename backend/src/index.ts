@@ -15,6 +15,7 @@ import { addUsersToGroupByEmail } from './routes/groups/users/addUsersToGroupByE
 import { logout } from './routes/auth/logout.js';
 import { getDashboardBalance } from './routes/dashboard/getDashboardBalance.js';
 import { getExpenses } from './routes/expenses/getExpenses.js';
+import { getDashboardExpenses } from './routes/dashboard/getDashboardExpenses.js';
 
 const app = express(); //app is the backend server
 
@@ -57,6 +58,8 @@ app.get('/expenses', getExpenses);
 app.get('/currencies', getCurrencies);
 
 app.get('/dashboard/balance', getDashboardBalance);
+
+app.get('/dashboard/expenses', getDashboardExpenses);
 
 app.post('/logout', logout);
 

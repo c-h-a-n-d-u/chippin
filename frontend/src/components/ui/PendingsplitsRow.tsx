@@ -1,10 +1,16 @@
 import type { PendingSplit } from "../../types/pendingSplit";
 
-type PendingsplitsRowProps = Omit<PendingSplit, "id">;
+type PendingsplitsRowProps = Pick<PendingSplit, "expenseName" | "expenseDate" | "amount" | "balance">;
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "2-digit",
+  }).format(date);
+}
 
-
-export default function PendingsplitsRow({name,date,amount,status}: PendingsplitsRowProps) {
-    const isPay = status === "You Pay";
+export default function PendingsplitsRow({expenseName, expenseDate, amount, balance}: PendingsplitsRowProps) {
+    const isPay = balance > 0;
     const sign = isPay ? "-" : "+";
     const signColor = isPay ? "text-rose-500" : "text-green-600";
     const statusColor = isPay ? "bg-red-200 text-gray-700" : "bg-green-200 text-gray-700";
@@ -15,11 +21,11 @@ export default function PendingsplitsRow({name,date,amount,status}: Pendingsplit
             <div className="sm:hidden flex items-start justify-between gap-4">
                 {/* left side */}
                 <div>
-                    <div className="font-medium text-gray-800">{name}</div>
+                    <div className="font-medium text-gray-800">{expenseName}</div>
                         <div className="text-sm text-gray-500 mt-1 flex items-center gap-2">
-                        <span>{date}</span>
+                        <span>{formatDate(expenseDate)}</span>
                         <span>•</span>
-                        <span className={`px-2 py-1 text-xs rounded-full ${statusColor}`}>{status}</span>
+                        <span className={`px-2 py-1 text-xs rounded-full ${statusColor}`}>{isPay ? "You Pay" : "You Get"}</span>
                     </div>
                 </div>
                 {/* right side */}
@@ -31,10 +37,10 @@ export default function PendingsplitsRow({name,date,amount,status}: Pendingsplit
             </div>
             {/* Desktop Layout */}
             <div className="hidden sm:flex items-center">
-                <div className="flex-1 font-medium">{name}</div>
-                <div className="w-32 text-sm text-gray-500">{date}</div>
+                <div className="flex-1 font-medium">{expenseName}</div>
+                <div className="w-32 text-sm text-gray-500">{formatDate(expenseDate)}</div>
                 <div className="w-32 text-right font-medium">{amount}</div>
-                <div className="w-32 text-right"><span className={`px-3 py-1 text-xs rounded-full ${statusColor}`}>{status}</span></div>
+                <div className="w-32 text-right"><span className={`px-3 py-1 text-xs rounded-full ${statusColor}`}>{isPay ? "You Pay" : "You Get"}</span></div>
             </div>               
         </div>
     );

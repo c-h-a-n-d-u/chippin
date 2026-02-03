@@ -1,7 +1,9 @@
 export type PendingSplit = {
-  id: number;
-  name: string;
-  date: string;
-  amount: string;
-  status: "You Pay" | "You Get";
+  expenseId: number;
+  expenseName: string;
+  expenseDate: Date;
+  amount: number;
+  currencyCode: string;
+  groupName: string;
+  balance: number;
 };
